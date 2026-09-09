@@ -699,6 +699,53 @@
                                 </button>
                             </div>
                         </div>
+
+                        <!-- NEW: GridOps Technical Deep-Dive Accordion (Commit 3) -->
+                        <details class="group rounded-2xl bg-slate-100/60 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 p-4 transition-all">
+                            <summary class="flex items-center justify-between cursor-pointer font-bold text-xs text-slate-900 dark:text-white uppercase tracking-wider font-mono select-none">
+                                <span class="flex items-center gap-2 text-brand-600 dark:text-brand-400">
+                                    <i data-lucide="terminal" class="w-4 h-4"></i> Engineering Deep Dive (Design Patterns & Math Formulation)
+                                </span>
+                                <span class="text-slate-400 text-xs group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            
+                            <div class="pt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 mt-3">
+                                <!-- Math & Derating Model -->
+                                <div class="space-y-1.5">
+                                    <h6 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                                        <i data-lucide="calculator" class="w-3.5 h-3.5 text-amber-400"></i> Physics Derating Model
+                                    </h6>
+                                    <div class="p-2.5 rounded-xl bg-slate-950 font-mono text-[11px] text-cyan-300 border border-slate-800">
+                                        P_exp = η · A · G · [1 - γ(T_cell - 25)]
+                                    </div>
+                                    <p class="text-[11px] leading-relaxed text-slate-500">
+                                        Computes expected power output based on real-time solar irradiance (G) and panel temperature (T_cell), eliminating 80% false alarms.
+                                    </p>
+                                </div>
+
+                                <!-- Design Patterns -->
+                                <div class="space-y-1.5">
+                                    <h6 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                                        <i data-lucide="layers" class="w-3.5 h-3.5 text-indigo-400"></i> Design Patterns
+                                    </h6>
+                                    <ul class="space-y-1 text-[11px] list-disc list-inside text-slate-500">
+                                        <li><strong class="text-slate-300">Factory Pattern:</strong> Decoupled telemetry decoders for multi-vendor inverters.</li>
+                                        <li><strong class="text-slate-300">Strategy Pattern:</strong> Dynamic baseline algorithms across varying cloud coverage.</li>
+                                        <li><strong class="text-slate-300">Observer Pattern:</strong> STOMP WebSocket alert broadcasting.</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Database & Indexing -->
+                                <div class="space-y-1.5">
+                                    <h6 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                                        <i data-lucide="database" class="w-3.5 h-3.5 text-emerald-400"></i> Database & Optimization
+                                    </h6>
+                                    <p class="text-[11px] leading-relaxed text-slate-500">
+                                        PostgreSQL with <strong class="text-slate-300">Flyway migrations</strong> and compound B-tree index on <code class="text-brand-400 font-mono text-[10px]">(asset_id, recorded_at DESC)</code> yielding sub-10ms query times on timeseries partitions.
+                                    </p>
+                                </div>
+                            </div>
+                        </details>
                     </div>
                 </div>
 
