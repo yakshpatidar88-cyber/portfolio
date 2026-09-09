@@ -227,3 +227,65 @@ function showToast(message) {
         }, 2500);
     }
 }
+
+// ==========================================
+// GRIDOPS INTERACTIVE TELEMETRY SIMULATOR
+// ==========================================
+const gridOpsSites = {
+    alpha: {
+        power: '44.8 MW',
+        irradiance: '920 W/m²',
+        soc: '92%',
+        derate: 'Nominal'
+    },
+    beta: {
+        power: '18.2 MW',
+        irradiance: '885 W/m²',
+        soc: '88%',
+        derate: '2.1% Derate'
+    }
+};
+
+function setGridOpsSite(site) {
+    const data = gridOpsSites[site];
+    if (!data) return;
+
+    document.getElementById('sim-power').textContent = data.power;
+    document.getElementById('sim-irradiance').textContent = data.irradiance;
+    document.getElementById('sim-soc').textContent = data.soc;
+    document.getElementById('sim-derate').textContent = data.derate;
+
+    const btnAlpha = document.getElementById('btn-site-alpha');
+    const btnBeta = document.getElementById('btn-site-beta');
+
+    if (site === 'alpha') {
+        btnAlpha.className = 'px-2.5 py-1 rounded-lg bg-brand-600 text-white font-bold transition-all';
+        btnBeta.className = 'px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-all';
+    } else {
+        btnBeta.className = 'px-2.5 py-1 rounded-lg bg-brand-600 text-white font-bold transition-all';
+        btnAlpha.className = 'px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-all';
+    }
+
+    document.getElementById('sim-status').textContent = 'Status: Live telemetry streaming nominal';
+    showToast(`Switched telemetry stream to Array ${site.toUpperCase()}`);
+}
+
+function triggerGridOpsIncident() {
+    const statusElem = document.getElementById('sim-status');
+    const powerElem = document.getElementById('sim-power');
+
+    powerElem.textContent = '31.2 MW';
+    powerElem.classList.remove('text-emerald-400');
+    powerElem.classList.add('text-red-400');
+
+    statusElem.innerHTML = '<span class="text-red-400 font-bold">⚠️ [P2 Alert] Inverter String Fault: -13.6MW deficit. Dispatched closed-loop verification.</span>';
+    showToast('P2 Incident Generated! Algorithm prioritized work order.');
+
+    setTimeout(() => {
+        powerElem.textContent = '44.8 MW';
+        powerElem.classList.remove('text-red-400');
+        powerElem.classList.add('text-emerald-400');
+        statusElem.innerHTML = '<span class="text-emerald-400 font-bold">✓ 60-min telemetry verified. Work order auto-closed.</span>';
+    }, 4500);
+}
+

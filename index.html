@@ -648,6 +648,57 @@
                                 </p>
                             </div>
                         </div>
+
+                        <!-- Interactive Live Telemetry Simulator Console (Commit 2) -->
+                        <div class="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-slate-200 font-mono">
+                            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                                <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>LIVE TELEMETRY SIMULATOR</span>
+                                </div>
+                                <!-- Site Selector Buttons -->
+                                <div class="flex items-center gap-1.5 text-[11px]">
+                                    <button onclick="setGridOpsSite('alpha')" id="btn-site-alpha" class="px-2.5 py-1 rounded-lg bg-brand-600 text-white font-bold transition-all">
+                                        Array Alpha (50MW)
+                                    </button>
+                                    <button onclick="setGridOpsSite('beta')" id="btn-site-beta" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-all">
+                                        Array Beta (20MW)
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Live Telemetry Metrics Grid -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                    <div class="text-[10px] text-slate-500 uppercase">Current Output</div>
+                                    <div id="sim-power" class="text-base sm:text-lg font-bold text-emerald-400">44.8 MW</div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                    <div class="text-[10px] text-slate-500 uppercase">Solar Irradiance</div>
+                                    <div id="sim-irradiance" class="text-base sm:text-lg font-bold text-amber-400">920 W/m²</div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                    <div class="text-[10px] text-slate-500 uppercase">Battery SOC</div>
+                                    <div id="sim-soc" class="text-base sm:text-lg font-bold text-cyan-400">92%</div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                    <div class="text-[10px] text-slate-500 uppercase">Thermal Derate</div>
+                                    <div id="sim-derate" class="text-base sm:text-lg font-bold text-indigo-400">Nominal</div>
+                                </div>
+                            </div>
+
+                            <!-- Incident Simulation Action -->
+                            <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-900 text-xs">
+                                <div class="flex items-center gap-2 text-slate-400 text-[11px]">
+                                    <i data-lucide="shield-alert" class="w-4 h-4 text-brand-400"></i>
+                                    <span id="sim-status">Status: All inverter strings operating normally</span>
+                                </div>
+                                <button onclick="triggerGridOpsIncident()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-red-500/20 hover:text-red-400 border border-slate-700 text-xs text-slate-300 font-bold transition-all flex items-center gap-1.5">
+                                    <i data-lucide="play" class="w-3.5 h-3.5 text-red-400"></i>
+                                    <span>Simulate Inverter Fault</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
