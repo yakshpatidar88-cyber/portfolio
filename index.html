@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yaksh Patidar | Full Stack Developer & AI Engineer | Placement Portfolio</title>
-    <meta name="description" content="Portfolio of Yaksh Patidar - Full Stack Developer specializing in Java, Python, React, Spring Boot, FastAPI, and RAG/AI systems. B.Tech CSE at Oriental Institute of Science and Technology.">
+    <title>Yaksh Patidar — Software Engineer & Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Yaksh Patidar - Software Engineer specializing in Java, Python, React, Spring Boot, FastAPI, and Distributed Systems.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN with plugins -->
+    <!-- Tailwind CSS CDN with custom config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,18 +23,10 @@
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            400: '#818cf8',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                        },
                         dark: {
-                            bg: '#080B11',
-                            card: '#0E1524',
-                            border: '#1E293B',
+                            bg: '#09090B',
+                            card: '#121216',
+                            border: '#27272A',
                         }
                     }
                 }
@@ -48,236 +40,210 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-[#F8FAFC] text-slate-900 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-300 font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen relative overflow-x-hidden">
+<body class="bg-[#FAFAFA] text-zinc-900 dark:bg-dark-bg dark:text-zinc-100 transition-colors duration-200 font-sans antialiased selection:bg-zinc-800 selection:text-white dark:selection:bg-zinc-200 dark:selection:text-zinc-900 min-h-screen relative overflow-x-hidden">
 
-    <!-- Dot Pattern & Ambient Glowing Orbs Background -->
-    <div class="fixed inset-0 bg-dot-pattern pointer-events-none z-0"></div>
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-brand-500/15 dark:bg-brand-600/15 rounded-full blur-[140px] animate-float-1"></div>
-        <div class="absolute top-1/3 -left-40 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-[140px] animate-float-2"></div>
-        <div class="absolute bottom-1/4 -right-40 w-[550px] h-[550px] bg-cyan-500/10 dark:bg-cyan-600/10 rounded-full blur-[150px] animate-float-3"></div>
+    <!-- Minimal Grid & Top Ambient Radial Spotlight -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    <div class="top-spotlight"></div>
+
+    <!-- Minimal Toast Notification -->
+    <div id="toast" class="fixed top-20 right-6 z-50 transform translate-y-[-100px] opacity-0 transition-all duration-200 bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 border border-zinc-700 dark:border-zinc-300 px-4 py-2 rounded-lg shadow-xl flex items-center gap-2 text-xs font-medium">
+        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+        <span id="toast-msg">Copied to clipboard</span>
     </div>
 
-    <!-- Top Toast Notification -->
-    <div id="toast" class="fixed top-20 right-6 z-50 transform translate-y-[-100px] opacity-0 transition-all duration-300 bg-slate-900/90 dark:bg-brand-600/90 text-white backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-2xl shadow-2xl flex items-center gap-2.5 text-xs font-semibold">
-        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-        <span id="toast-msg">Copied to clipboard!</span>
-    </div>
-
-    <!-- Modern Glass Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-dark-bg/75 border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-dark-bg/80 border-b border-zinc-200/80 dark:border-zinc-800/80 transition-colors">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <!-- Logo -->
             <a href="#hero" class="flex items-center gap-2.5 group">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-cyan-400 flex items-center justify-center text-white font-mono font-bold text-sm shadow-md shadow-brand-500/25 group-hover:scale-105 group-hover:rotate-3 transition-transform">
+                <div class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 font-mono font-bold text-xs flex items-center justify-center transition-transform group-hover:scale-105">
                     YP
                 </div>
-                <div class="flex flex-col">
-                    <span class="font-extrabold text-base tracking-tight text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">
-                        Yaksh Patidar
-                    </span>
-                    <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wider">PORTFOLIO</span>
-                </div>
+                <span class="font-semibold text-sm tracking-tight text-zinc-900 dark:text-zinc-100">
+                    Yaksh Patidar
+                </span>
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300">
-                <a href="#about" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">About</a>
-                <a href="#skills" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">Skills</a>
-                <a href="#dsa" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">DSA & Problem Solving</a>
-                <a href="#projects" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">Projects</a>
-                <a href="#experience" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">Experience</a>
-                <a href="#certifications" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">Certifications</a>
-                <a href="#education" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">Education</a>
-                <a href="#contact" class="px-3 py-1.5 rounded-lg hover:text-brand-500 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all">Contact</a>
+            <nav class="hidden md:flex items-center gap-1 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                <a href="#about" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">About</a>
+                <a href="#skills" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Skills</a>
+                <a href="#dsa" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">DSA</a>
+                <a href="#projects" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Projects</a>
+                <a href="#experience" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Experience</a>
+                <a href="#certifications" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Certifications</a>
+                <a href="#contact" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">Contact</a>
             </nav>
 
             <!-- Actions (Theme Toggle + Resume CTA) -->
-            <div class="flex items-center gap-3">
-                <button id="theme-toggle" aria-label="Toggle theme" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors">
-                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
-                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+            <div class="flex items-center gap-2.5">
+                <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors">
+                    <i data-lucide="sun" class="w-3.5 h-3.5 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-3.5 h-3.5 block dark:hidden"></i>
                 </button>
 
-                <a href="assets/resume.pdf" target="_blank" download class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs md:text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 rounded-xl shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-0.5">
-                    <i data-lucide="download" class="w-4 h-4"></i>
+                <a href="assets/resume.pdf" target="_blank" download class="hidden sm:inline-flex btn-primary !py-1.5 !px-3.5 !text-xs !rounded-lg">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>Resume</span>
                 </a>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <i data-lucide="menu" class="w-5 h-5"></i>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900">
+                    <i data-lucide="menu" class="w-4 h-4"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Drawer Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-xl px-4 pt-2 pb-4 space-y-1">
-            <a href="#about" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
-            <a href="#skills" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
-            <a href="#dsa" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">DSA & Problem Solving</a>
-            <a href="#projects" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
-            <a href="#experience" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Experience</a>
-            <a href="#certifications" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Certifications</a>
-            <a href="#education" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Education</a>
-            <a href="#contact" class="block px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-md px-4 pt-2 pb-4 space-y-1">
+            <a href="#about" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">About</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">Skills</a>
+            <a href="#dsa" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">DSA & Problem Solving</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">Projects</a>
+            <a href="#experience" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">Experience</a>
+            <a href="#certifications" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">Certifications</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900">Contact</a>
             <div class="pt-2">
-                <a href="assets/resume.pdf" target="_blank" download class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-xl">
-                    <i data-lucide="download" class="w-4 h-4"></i> Download Resume
+                <a href="assets/resume.pdf" target="_blank" download class="w-full btn-primary !py-2 !text-xs">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Resume
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 space-y-24 sm:space-y-32">
+    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-24 pb-20 space-y-20 sm:space-y-28">
 
-        <!-- ================= HERO SECTION WITH USER PHOTO ================= -->
-        <section id="hero" class="pt-8 sm:pt-14 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        <!-- ================= HERO SECTION ================= -->
+        <section id="hero" class="pt-6 sm:pt-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
             <!-- Left Info -->
-            <div class="flex-1 space-y-6 text-center lg:text-left">
+            <div class="flex-1 space-y-5 text-center lg:text-left">
                 <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-600 dark:text-emerald-400 text-xs font-semibold tracking-wide">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span>Actively Seeking SDE & Full-Stack Opportunities</span>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    <span>Open to Software Engineering & Full-Stack Roles</span>
                 </div>
 
                 <!-- Main Heading & Typewriter Subtitle -->
-                <div class="space-y-3">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-indigo-500 to-cyan-400">Yaksh Patidar</span> 👋
+                <div class="space-y-2">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                        Yaksh Patidar
                     </h1>
-                    <div class="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-300 h-8 flex items-center justify-center lg:justify-start">
-                        <span id="typewriter-text" class="text-brand-600 dark:text-brand-400 font-mono"></span>
+                    <div class="text-base sm:text-lg font-mono text-zinc-500 dark:text-zinc-400 h-7 flex items-center justify-center lg:justify-start">
+                        <span id="typewriter-text" class="text-zinc-800 dark:text-zinc-200"></span>
                         <span class="typed-cursor"></span>
                     </div>
                 </div>
 
-                <!-- Pitch -->
-                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-                    Computer Science undergraduate at <strong class="text-slate-900 dark:text-slate-200">Oriental Institute of Science and Technology</strong> with hands-on experience in building scalable AI-powered applications, distributed systems, and full-stack web platforms using <strong class="text-slate-900 dark:text-slate-200">Java (Spring Boot), Python (FastAPI), React, and PostgreSQL</strong>.
+                <!-- Bio / Pitch -->
+                <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-xl leading-relaxed">
+                    Computer Science undergraduate at <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Oriental Institute of Science and Technology</strong>. Building high-throughput backend services, telemetry verification pipelines, and AI-powered systems with <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Java, Python, React, and PostgreSQL</strong>.
                 </p>
 
-                <!-- Primary CTAs -->
-                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                    <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 rounded-2xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all transform hover:-translate-y-0.5">
-                        <i data-lucide="code-2" class="w-4 h-4"></i>
-                        Explore Featured Projects
+                <!-- Primary Minimal CTAs -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+                    <a href="#projects" class="btn-primary">
+                        <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+                        <span>View Work</span>
                     </a>
-                    <a href="assets/resume.pdf" target="_blank" download class="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-dark-card border border-slate-200 dark:border-slate-800 hover:border-brand-500 rounded-2xl shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5">
-                        <i data-lucide="file-text" class="w-4 h-4 text-brand-500"></i>
-                        Download Resume (PDF)
+                    <a href="assets/resume.pdf" target="_blank" download class="btn-secondary">
+                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                        <span>Resume (PDF)</span>
                     </a>
                 </div>
 
-                <!-- Social & Contact Badges -->
-                <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                    <button onclick="copyToClipboard('yakshpatidar88@gmail.com', 'Email copied to clipboard!')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-red-500 hover:border-red-500/40 transition-all text-xs font-medium">
-                        <i data-lucide="mail" class="w-4 h-4 text-red-500"></i> yakshpatidar88@gmail.com
+                <!-- Social & Contact Quick Links -->
+                <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                    <button onclick="copyToClipboard('yakshpatidar88@gmail.com', 'Email copied!')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors text-xs font-mono">
+                        <i data-lucide="mail" class="w-3.5 h-3.5"></i> yakshpatidar88@gmail.com
                     </button>
-                    <button onclick="copyToClipboard('+919691428855', 'Phone copied to clipboard!')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-emerald-500 hover:border-emerald-500/40 transition-all text-xs font-medium">
-                        <i data-lucide="phone" class="w-4 h-4 text-emerald-500"></i> +91-9691428855
+                    <button onclick="copyToClipboard('+919691428855', 'Phone copied!')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors text-xs font-mono">
+                        <i data-lucide="phone" class="w-3.5 h-3.5"></i> +91-9691428855
                     </button>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-blue-500 hover:border-blue-500/40 transition-all text-xs font-medium">
-                        <i data-lucide="linkedin" class="w-4 h-4 text-blue-500"></i> LinkedIn
+                    <a href="https://github.com/yakshpatidar88-cyber" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors text-xs font-mono">
+                        <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
                     </a>
-                    <a href="https://github.com/yakshpatidar88-cyber" target="_blank" rel="noopener" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-dark-card border border-slate-200/80 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-brand-500 hover:border-brand-500/40 transition-all text-xs font-medium">
-                        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800/80 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors text-xs font-mono">
+                        <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn
                     </a>
                 </div>
             </div>
 
-            <!-- Right Profile Portrait Card with Smooth 3D Hover Transition -->
-            <div class="profile-card-wrapper">
-                <div class="profile-card w-72 sm:w-80 rounded-3xl p-1 bg-gradient-to-tr from-brand-600 via-indigo-500 to-cyan-400 shadow-2xl shadow-brand-500/25">
-                    <div class="relative rounded-[22px] bg-dark-bg overflow-hidden flex flex-col">
-                        
-                        <!-- Portrait Image Container -->
-                        <div class="profile-img-container h-84 sm:h-96 w-full overflow-hidden bg-slate-900 relative">
-                            <img src="assets/profile.jpg" alt="Yaksh Patidar" class="w-full h-full object-cover object-[center_20%]">
-                            
-                            <!-- Gradient Fade at bottom of image -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-card via-transparent to-transparent opacity-90"></div>
-                            
-                            <!-- Floating Online Badge on Image -->
-                            <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/10 text-emerald-400 text-[11px] font-semibold flex items-center gap-1.5 shadow-lg">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                Available
-                            </div>
+            <!-- Right Profile Portrait Card (Clean Minimal Border) -->
+            <div class="w-60 sm:w-64 rounded-2xl p-1 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-lg">
+                <div class="relative rounded-xl overflow-hidden bg-zinc-950">
+                    <div class="h-72 w-full overflow-hidden relative">
+                        <img src="assets/profile.jpg" alt="Yaksh Patidar" class="w-full h-full object-cover object-[center_20%] grayscale-[15%] hover:grayscale-0 transition-all duration-300">
+                    </div>
+                    <div class="p-3 bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs">
+                        <div>
+                            <div class="font-semibold text-zinc-900 dark:text-zinc-100">Yaksh Patidar</div>
+                            <div class="text-[11px] text-zinc-500 font-mono">B.Tech CSE '27</div>
                         </div>
-
-                        <!-- Card Footer Details -->
-                        <div class="p-4 bg-white dark:bg-dark-card border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-                            <div>
-                                <h3 class="font-bold text-sm text-slate-900 dark:text-white">Yaksh Patidar</h3>
-                                <p class="text-[11px] text-brand-500 font-mono">B.Tech CSE (2023–2027)</p>
-                            </div>
-                            <div class="px-2.5 py-1 rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-400 text-[11px] font-bold font-mono border border-brand-500/20">
-                                SDE / Full-Stack
-                            </div>
-                        </div>
-
+                        <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-mono text-[10px]">
+                            Bhopal, IN
+                        </span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= STATS SUMMARY BANNER ================= -->
-        <section id="stats-section" class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 reveal-on-scroll">
-            <div class="p-6 rounded-2xl glass-card text-center space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400 counter-val" data-target="4" data-suffix="+">0</div>
-                <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Full-Stack & AI Projects</div>
+        <!-- ================= METRICS / STATS ================= -->
+        <section id="stats-section" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 reveal-on-scroll">
+            <div class="p-4 rounded-xl minimal-card text-center space-y-1">
+                <div class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 counter-val" data-target="4" data-suffix="+">0</div>
+                <div class="text-[11px] text-zinc-500 font-mono">Production Projects</div>
             </div>
-            <div class="p-6 rounded-2xl glass-card text-center space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-indigo-600 dark:text-indigo-400 counter-val" data-target="2" data-suffix="">0</div>
-                <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Internship Experiences</div>
+            <div class="p-4 rounded-xl minimal-card text-center space-y-1">
+                <div class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 counter-val" data-target="2" data-suffix="">0</div>
+                <div class="text-[11px] text-zinc-500 font-mono">Internships</div>
             </div>
-            <div class="p-6 rounded-2xl glass-card text-center space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-cyan-600 dark:text-cyan-400 counter-val" data-target="4" data-suffix="+">0</div>
-                <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Verified Certifications</div>
+            <div class="p-4 rounded-xl minimal-card text-center space-y-1">
+                <div class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 counter-val" data-target="4" data-suffix="+">0</div>
+                <div class="text-[11px] text-zinc-500 font-mono">Certifications</div>
             </div>
-            <div class="p-6 rounded-2xl glass-card text-center space-y-1">
-                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 counter-val" data-target="80" data-suffix="%">0</div>
-                <div class="text-xs font-medium text-slate-500 dark:text-slate-400">Telemetry Noise Reduction</div>
+            <div class="p-4 rounded-xl minimal-card text-center space-y-1">
+                <div class="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 counter-val" data-target="80" data-suffix="%">0</div>
+                <div class="text-[11px] text-zinc-500 font-mono">Noise Reduction</div>
             </div>
         </section>
 
         <!-- ================= ABOUT ME ================= -->
-        <section id="about" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="text-center md:text-left space-y-2">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">01. Summary</h2>
-                <h3 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Professional Background</h3>
+        <section id="about" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">01 / Background</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">About Me</h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 items-start">
-                <div class="md:col-span-2 space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base">
+            <div class="grid md:grid-cols-3 gap-6 items-start">
+                <div class="md:col-span-2 space-y-3.5 text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
                     <p>
-                        I am a Computer Science undergraduate with hands-on experience architecting AI-powered applications, high-throughput RESTful APIs, and full-stack web platforms. Proficient in <strong class="text-slate-900 dark:text-white">Java, Python, React, and PostgreSQL</strong>, backed by a strong foundation in <strong class="text-slate-900 dark:text-white">Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), and Database Management Systems (DBMS)</strong>.
+                        I am a Computer Science undergraduate focused on software engineering, distributed systems, and modern AI pipelines. My core foundation centers on <strong class="text-zinc-900 dark:text-zinc-200">Data Structures & Algorithms, Object-Oriented Design, and Database Architecture</strong>.
                     </p>
                     <p>
-                        My engineering work spans across complex domains: from building <strong class="text-slate-900 dark:text-white">telemetry verification systems for renewable energy assets</strong> with Java Spring Boot and FastAPI, to architecting <strong class="text-slate-900 dark:text-white">RAG (Retrieval-Augmented Generation) document search systems</strong> with LangChain and vector databases.
+                        My experience covers building telemetry verification systems for solar energy assets (GridOps) with Spring Boot and FastAPI, to architecting retrieval-augmented generation (RAG) knowledge systems with vector databases.
                     </p>
                     <p>
-                        I focus on writing clean, test-driven, maintainable code, designing decoupled microservices, and continuously leveraging modern AI/ML tooling to solve impactful engineering problems.
+                        I focus on test coverage, clean code patterns, and scalable microservices.
                     </p>
                 </div>
 
-                <!-- Engineering Highlights -->
-                <div class="p-6 rounded-2xl glass-card space-y-4">
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
-                        <i data-lucide="cpu" class="w-4 h-4 text-brand-500"></i> Core Competencies
-                    </h4>
-                    <ul class="space-y-2.5 text-xs text-slate-600 dark:text-slate-400">
+                <div class="p-5 rounded-xl minimal-card space-y-3">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-xs uppercase tracking-wider font-mono">
+                        Core Competencies
+                    </h3>
+                    <ul class="space-y-2 text-xs text-zinc-600 dark:text-zinc-400">
                         <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500"></i> Full-Stack System Architecture
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-zinc-500"></i> Full-Stack System Architecture
                         </li>
                         <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500"></i> RAG & Generative AI Pipelines
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-zinc-500"></i> RAG & Generative AI Pipelines
                         </li>
                         <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500"></i> High-Throughput Microservices
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-zinc-500"></i> High-Throughput Microservices
                         </li>
                         <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-500"></i> Relational & Vector DB Optimization
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-zinc-500"></i> Relational & Timeseries DB Design
                         </li>
                     </ul>
                 </div>
@@ -285,44 +251,32 @@
         </section>
 
         <!-- ================= SKILLS MATRIX ================= -->
-        <section id="skills" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="text-center md:text-left space-y-2">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">02. Tech Stack</h2>
-                <h3 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Technical Skills</h3>
+        <section id="skills" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">02 / Technical Skills</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Tech Stack</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <!-- Languages -->
-                <div class="p-6 rounded-2xl glass-card space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
-                            <i data-lucide="code-2" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-base">Languages</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Java</span>
+                <div class="p-5 rounded-xl minimal-card space-y-3">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-xs font-mono uppercase tracking-wider">Languages</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-tag">Java 21</span>
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">HTML5 / CSS3</span>
                     </div>
                 </div>
 
                 <!-- Frameworks & AI -->
-                <div class="p-6 rounded-2xl glass-card space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center">
-                            <i data-lucide="layers" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-base">Frameworks & AI</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">Next.js</span>
+                <div class="p-5 rounded-xl minimal-card space-y-3">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-xs font-mono uppercase tracking-wider">Frameworks & Backend</h3>
+                    <div class="flex flex-wrap gap-1.5">
                         <span class="skill-tag">Spring Boot 3</span>
                         <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">React.js</span>
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">Express.js</span>
                         <span class="skill-tag">LangChain</span>
@@ -330,419 +284,268 @@
                 </div>
 
                 <!-- Databases -->
-                <div class="p-6 rounded-2xl glass-card space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
-                            <i data-lucide="database" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-base">Databases & Storage</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
+                <div class="p-5 rounded-xl minimal-card space-y-3">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-xs font-mono uppercase tracking-wider">Storage & DB</h3>
+                    <div class="flex flex-wrap gap-1.5">
                         <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Redis</span>
                         <span class="skill-tag">MongoDB</span>
                         <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Redis (Caching)</span>
-                        <span class="skill-tag">ChromaDB (Vector DB)</span>
+                        <span class="skill-tag">ChromaDB</span>
                     </div>
                 </div>
 
                 <!-- Tools & DevOps -->
-                <div class="p-6 rounded-2xl glass-card space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
-                            <i data-lucide="terminal" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-base">Tools & DevOps</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
+                <div class="p-5 rounded-xl minimal-card space-y-3">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-xs font-mono uppercase tracking-wider">DevOps & Tools</h3>
+                    <div class="flex flex-wrap gap-1.5">
                         <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Git / GitHub Actions</span>
+                        <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">Jest</span>
-                        <span class="skill-tag">PyTest</span>
-                        <span class="skill-tag">Linux / Terminal</span>
+                        <span class="skill-tag">PyTest / Jest</span>
                     </div>
                 </div>
 
-                <!-- Methodologies & Architecture -->
-                <div class="p-6 rounded-2xl glass-card space-y-4 md:col-span-2">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center">
-                            <i data-lucide="boxes" class="w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-base">Methodologies & Core CS</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
+                <!-- Methodologies & Core CS -->
+                <div class="p-5 rounded-xl minimal-card space-y-3 md:col-span-2">
+                    <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-xs font-mono uppercase tracking-wider">Core CS Concepts</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="skill-tag">Data Structures & Algorithms</span>
                         <span class="skill-tag">Object-Oriented Programming (OOP)</span>
-                        <span class="skill-tag">Data Structures & Algorithms (DSA)</span>
                         <span class="skill-tag">REST API Design</span>
-                        <span class="skill-tag">Microservices Architecture</span>
-                        <span class="skill-tag">RAG (Retrieval-Augmented Generation)</span>
-                        <span class="skill-tag">Test-Driven Development (TDD)</span>
-                        <span class="skill-tag">Agile / Scrum</span>
+                        <span class="skill-tag">Microservices</span>
                         <span class="skill-tag">DBMS & Indexing</span>
+                        <span class="skill-tag">Operating Systems</span>
+                        <span class="skill-tag">Computer Networks</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= DSA & COMPETITIVE PROGRAMMING ================= -->
-        <section id="dsa" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div class="space-y-2">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">03. Problem Solving</h2>
-                    <h3 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">DSA & Coding Profiles</h3>
-                </div>
-                <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
-                    400+ Total Algorithmic Problems Solved
-                </div>
+        <!-- ================= DSA & CODING ================= -->
+        <section id="dsa" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">03 / Problem Solving</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Algorithmic Problem Solving</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- LeetCode Card -->
-                <div class="p-6 rounded-3xl glass-card space-y-5 flex flex-col justify-between">
-                    <div class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- LeetCode -->
+                <div class="p-5 rounded-xl minimal-card space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
                         <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
-                                <i data-lucide="code" class="w-5 h-5"></i>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-bold font-mono bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                                Active Solver
-                            </span>
+                            <span class="font-mono text-xs font-semibold text-zinc-900 dark:text-zinc-100">LeetCode</span>
+                            <span class="text-[10px] font-mono text-zinc-500">400+ Total</span>
                         </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900 dark:text-white">LeetCode</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Data Structures, Algorithms & Contest Challenges</p>
-                        </div>
-                        <!-- Progress breakdown -->
-                        <div class="space-y-2 pt-2">
-                            <div class="flex justify-between text-xs font-semibold">
-                                <span class="text-emerald-500">Easy (150+)</span>
-                                <span class="text-amber-500">Medium (220+)</span>
-                                <span class="text-red-500">Hard (30+)</span>
+                        <div class="space-y-1.5 pt-1 text-xs">
+                            <div class="flex justify-between text-[11px] font-mono text-zinc-500">
+                                <span>Easy (150+)</span>
+                                <span>Medium (220+)</span>
+                                <span>Hard (30+)</span>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 flex overflow-hidden">
-                                <div class="h-full bg-emerald-500 w-[38%]"></div>
-                                <div class="h-full bg-amber-500 w-[55%]"></div>
-                                <div class="h-full bg-red-500 w-[7%]"></div>
+                            <div class="w-full h-1.5 rounded-full bg-zinc-200 dark:bg-zinc-800 flex overflow-hidden">
+                                <div class="h-full bg-zinc-400 w-[38%]"></div>
+                                <div class="h-full bg-zinc-600 dark:bg-zinc-300 w-[55%]"></div>
+                                <div class="h-full bg-zinc-900 dark:bg-zinc-100 w-[7%]"></div>
                             </div>
                         </div>
                     </div>
-                    <a href="https://leetcode.com" target="_blank" rel="noopener" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-center bg-slate-100 dark:bg-slate-800/80 hover:bg-amber-500 hover:text-white text-slate-800 dark:text-slate-200 transition-all flex items-center justify-center gap-2">
-                        <span>View LeetCode Profile</span>
-                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <a href="https://leetcode.com" target="_blank" rel="noopener" class="btn-secondary !py-1.5 !text-xs !justify-between">
+                        <span>View Profile</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
 
-                <!-- GeeksforGeeks & Coding Ninjas Card -->
-                <div class="p-6 rounded-3xl glass-card space-y-5 flex flex-col justify-between">
-                    <div class="space-y-4">
+                <!-- GFG -->
+                <div class="p-5 rounded-xl minimal-card space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
                         <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
-                                <i data-lucide="binary" class="w-5 h-5"></i>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                                Core Foundations
-                            </span>
+                            <span class="font-mono text-xs font-semibold text-zinc-900 dark:text-zinc-100">GeeksforGeeks</span>
+                            <span class="text-[10px] font-mono text-zinc-500">Topics</span>
                         </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900 dark:text-white">GeeksforGeeks</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Topic-wise mastery in Java & C++</p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 text-xs pt-2">
-                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono text-[11px]">Dynamic Programming</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono text-[11px]">Graph Theory</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono text-[11px]">Binary Trees & BST</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 font-mono text-[11px]">Trie & Segment Trees</span>
+                        <div class="flex flex-wrap gap-1 text-[11px] font-mono pt-1 text-zinc-600 dark:text-zinc-400">
+                            <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800/80">Dynamic Programming</span>
+                            <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800/80">Graphs</span>
+                            <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800/80">Trees & BST</span>
                         </div>
                     </div>
-                    <a href="https://geeksforgeeks.org" target="_blank" rel="noopener" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold text-center bg-slate-100 dark:bg-slate-800/80 hover:bg-emerald-600 hover:text-white text-slate-800 dark:text-slate-200 transition-all flex items-center justify-center gap-2">
-                        <span>View GFG Profile</span>
-                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <a href="https://geeksforgeeks.org" target="_blank" rel="noopener" class="btn-secondary !py-1.5 !text-xs !justify-between">
+                        <span>View Profile</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
 
-                <!-- Core CS Placement Readiness -->
-                <div class="p-6 rounded-3xl glass-card space-y-5 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center">
-                                <i data-lucide="check-check" class="w-5 h-5"></i>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-bold font-mono bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
-                                100% Prepared
-                            </span>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Technical Interview Readiness</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Comprehensive grasp on fundamental core subjects</p>
-                        </div>
-                        <ul class="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-500"></i> DBMS (SQL, Normalization, Indexing, ACID)
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-500"></i> OS (Concurrency, Deadlocks, Paging)
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-500"></i> OOPs (Design Patterns, SOLID Principles)
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-3.5 h-3.5 text-brand-500"></i> Computer Networks (TCP/IP, HTTP/3, WebSockets)
-                            </li>
+                <!-- Interview Ready -->
+                <div class="p-5 rounded-xl minimal-card space-y-3 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <span class="font-mono text-xs font-semibold text-zinc-900 dark:text-zinc-100">Core Subject Readiness</span>
+                        <ul class="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-400">
+                            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-zinc-500"></i> DBMS (SQL, Indexing, ACID)</li>
+                            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-zinc-500"></i> OS (Concurrency, Threading)</li>
+                            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-zinc-500"></i> OOPs & System Design Basics</li>
                         </ul>
                     </div>
-                    <div class="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 text-[11px] font-mono font-semibold text-center">
-                        🎯 Ready for SDE-1 Technical Rounds
+                    <div class="text-[11px] font-mono text-zinc-500">
+                        Targeting SDE-1 roles
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ================= FEATURED PROJECTS WITH VISUAL PREVIEWS & LINKS ================= -->
-        <section id="projects" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div class="space-y-2">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">03. Engineering Portfolio</h2>
-                    <h3 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Featured Projects</h3>
-                </div>
-                <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
-                    Production Systems • Microservices • AI/RAG
-                </div>
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">04 / Engineering Work</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Featured Projects</h2>
             </div>
 
-            <div class="grid grid-cols-1 gap-8">
+            <div class="space-y-6">
                 
-                <!-- PROJECT 1: GridOps (Flagship Project) -->
-                <div class="project-card p-7 sm:p-9 rounded-3xl glass-card flagship-glow space-y-6">
+                <!-- PROJECT 1: GridOps (Flagship) -->
+                <div class="p-6 sm:p-7 rounded-2xl minimal-card flagship-border space-y-6">
                     
-                    <!-- Preview Banner Header -->
-                    <div class="project-preview-banner h-48 sm:h-56 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 border border-slate-700/60 p-6 flex flex-col justify-between relative">
-                        <div class="flex items-center justify-between z-10">
-                            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-mono">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                Live Telemetry Stream • 5-min Ingestion
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">FastAPI & Spring Boot</span>
-                        </div>
-
-                        <!-- Mockup Graph Visual -->
-                        <div class="mockup-view flex items-end justify-between gap-2 h-24 pt-4 px-2 opacity-85">
-                            <div class="w-full bg-indigo-500/20 rounded-t-lg h-60% border-t-2 border-indigo-400 relative"></div>
-                            <div class="w-full bg-cyan-500/20 rounded-t-lg h-85% border-t-2 border-cyan-400 relative"></div>
-                            <div class="w-full bg-brand-500/30 rounded-t-lg h-45% border-t-2 border-brand-400 relative"></div>
-                            <div class="w-full bg-emerald-500/20 rounded-t-lg h-95% border-t-2 border-emerald-400 relative"></div>
-                            <div class="w-full bg-amber-500/20 rounded-t-lg h-70% border-t-2 border-amber-400 relative"></div>
-                            <div class="w-full bg-indigo-500/30 rounded-t-lg h-100% border-t-2 border-indigo-400 relative"></div>
-                        </div>
-
-                        <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 z-10 pt-2 border-t border-slate-800">
-                            <span>Solar PV Baseline Model</span>
-                            <span class="text-emerald-400 font-bold">80% False Alarm Reduction</span>
-                        </div>
-                    </div>
-
                     <div class="flex flex-wrap items-start justify-between gap-4">
-                        <div class="space-y-2">
-                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-brand-500/20 to-cyan-500/20 text-brand-600 dark:text-brand-300 text-xs font-bold font-mono border border-brand-500/30">
-                                <i data-lucide="zap" class="w-3.5 h-3.5 text-brand-400"></i> Flagship Production Project
+                        <div class="space-y-1.5">
+                            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+                                Flagship Project
                             </div>
-                            <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                            <h3 class="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-100">
                                 GridOps: Renewable Energy Asset Operations & Telemetry Platform
-                            </h4>
+                            </h3>
                         </div>
                         
-                        <!-- Direct Action Links -->
-                        <div class="flex flex-wrap items-center gap-3">
-                            <a href="https://github.com/yakshpatidar88-cyber" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-brand-500 hover:border-brand-500/50 border border-slate-300 dark:border-slate-700 transition-all text-xs font-bold shadow-sm">
-                                <i data-lucide="github" class="w-4 h-4"></i> GitHub Code
+                        <!-- Clean Minimal Buttons -->
+                        <div class="flex flex-wrap items-center gap-2">
+                            <a href="https://github.com/yakshpatidar88-cyber" target="_blank" rel="noopener" class="btn-secondary !py-1.5 !px-3 !text-xs">
+                                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                <span>Code</span>
                             </a>
-                            <a href="https://grid-ops-zeta.vercel.app" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-500/25 transition-all text-xs font-bold transform hover:-translate-y-0.5">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Application Demo
+                            <a href="https://grid-ops-zeta.vercel.app" target="_blank" rel="noopener" class="btn-primary !py-1.5 !px-3 !text-xs">
+                                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                                <span>Live Demo</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Tech Badges -->
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-mono font-medium border border-indigo-200 dark:border-indigo-800/80">Java 21</span>
-                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-mono font-medium border border-indigo-200 dark:border-indigo-800/80">Spring Boot 3</span>
-                        <span class="px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono font-medium border border-emerald-200 dark:border-emerald-800/80">Python FastAPI</span>
-                        <span class="px-3 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-mono font-medium border border-blue-200 dark:border-blue-800/80">PostgreSQL</span>
-                        <span class="px-3 py-1 rounded-lg bg-red-50 dark:bg-red-950/60 text-red-700 dark:text-red-300 font-mono font-medium border border-red-200 dark:border-red-800/80">Redis</span>
-                        <span class="px-3 py-1 rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 font-mono font-medium border border-cyan-200 dark:border-cyan-800/80">React 18 & WebSockets</span>
-                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono font-medium">Docker</span>
+                    <!-- Tech Tags -->
+                    <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                        <span class="skill-tag">Java 21</span>
+                        <span class="skill-tag">Spring Boot 3</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">React 18</span>
+                        <span class="skill-tag">Docker</span>
                     </div>
 
                     <!-- Bullet Points -->
-                    <ul class="space-y-3.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-inside">
+                    <ul class="space-y-2 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed list-disc list-inside">
                         <li>
-                            <strong class="text-slate-900 dark:text-white">Distributed Timeseries Ingestion:</strong> Engineered an operational telemetry & maintenance verification system ingesting 5-minute timeseries data across distributed solar arrays and battery systems.
+                            <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Distributed Timeseries Ingestion:</strong> Ingests 5-minute timeseries data across solar arrays and battery systems.
                         </li>
                         <li>
-                            <strong class="text-slate-900 dark:text-white">Analytics Microservice:</strong> Developed a Python FastAPI microservice with physical PV baseline equations & thermal derating models, filtering momentary noise and <strong class="text-brand-500 font-bold">reducing false alarm rates by 80%</strong>.
+                            <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Analytics Microservice:</strong> Python FastAPI microservice with physical PV baseline equations & thermal derating models, filtering momentary noise and reducing false alarms by 80%.
                         </li>
                         <li>
-                            <strong class="text-slate-900 dark:text-white">Incident Prioritization Algorithm:</strong> Designed an automated incident prioritization algorithm (P1–P4) factoring power deficit, duration, and asset criticality, backed by an idempotent PostgreSQL schema with Flyway migrations.
+                            <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Incident Prioritization:</strong> Automated P1–P4 algorithm factoring power deficit, duration, and asset criticality with idempotent PostgreSQL Flyway schema.
                         </li>
                         <li>
-                            <strong class="text-slate-900 dark:text-white">Closed-Loop Verification:</strong> Implemented a closed-loop post-repair verification scheduler that continuously evaluates post-maintenance telemetry for 60 minutes before auto-closing work orders.
+                            <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Closed-Loop Verification:</strong> Evaluates post-maintenance telemetry for 60 minutes before auto-closing work orders.
                         </li>
                         <li>
-                            <strong class="text-slate-900 dark:text-white">Real-Time Operations Console:</strong> Built real-time operations console with React 18, Recharts, and STOMP WebSockets, <strong class="text-brand-500 font-bold">cutting operational dispatch latency by 65%</strong>.
+                            <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Real-Time Console:</strong> React 18, Recharts, and STOMP WebSockets, cutting operational dispatch latency by 65%.
                         </li>
                     </ul>
 
-                    <!-- NEW: GridOps System Architecture Pipeline Breakdown (Commit 1) -->
-                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h5 class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono flex items-center gap-2">
-                                <i data-lucide="git-merge" class="w-4 h-4"></i> System Architecture & End-to-End Pipeline
-                            </h5>
-                            <span class="text-[11px] font-mono text-slate-500">Distributed Microservices Design</span>
+                    <!-- Architecture Pipeline -->
+                    <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800/80 space-y-3">
+                        <div class="flex items-center justify-between text-xs font-mono text-zinc-500">
+                            <span>System Pipeline</span>
+                            <span>Microservices Architecture</span>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-                            <!-- Stage 1 -->
-                            <div class="p-3.5 rounded-2xl bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
-                                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                    <span class="w-5 h-5 rounded-lg bg-indigo-500/10 text-indigo-500 flex items-center justify-center font-mono text-[10px]">1</span>
-                                    5-Min Ingestion
-                                </div>
-                                <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
-                                    Ingests solar irradiance, string voltage & battery SOC telemetry via asynchronous batch streams.
-                                </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 text-xs">
+                            <div class="p-3 rounded-lg bg-zinc-100/70 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
+                                <div class="font-mono text-zinc-900 dark:text-zinc-200 font-medium">1. Ingestion</div>
+                                <div class="text-[11px] text-zinc-500 mt-1">Timeseries stream via asynchronous batching.</div>
                             </div>
-
-                            <!-- Stage 2 -->
-                            <div class="p-3.5 rounded-2xl bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
-                                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                    <span class="w-5 h-5 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-mono text-[10px]">2</span>
-                                    PV Physics Engine
-                                </div>
-                                <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
-                                    FastAPI microservice computes thermal derating models to eliminate 80% false positive alerts.
-                                </p>
+                            <div class="p-3 rounded-lg bg-zinc-100/70 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
+                                <div class="font-mono text-zinc-900 dark:text-zinc-200 font-medium">2. PV Analytics</div>
+                                <div class="text-[11px] text-zinc-500 mt-1">Thermal derating models filtering noise.</div>
                             </div>
-
-                            <!-- Stage 3 -->
-                            <div class="p-3.5 rounded-2xl bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
-                                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                    <span class="w-5 h-5 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-mono text-[10px]">3</span>
-                                    P1–P4 Prioritizer
-                                </div>
-                                <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
-                                    Dynamic incident ranking based on instantaneous power deficit, duration & revenue impact.
-                                </p>
+                            <div class="p-3 rounded-lg bg-zinc-100/70 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
+                                <div class="font-mono text-zinc-900 dark:text-zinc-200 font-medium">3. Prioritizer</div>
+                                <div class="text-[11px] text-zinc-500 mt-1">P1–P4 dynamic severity calculation.</div>
                             </div>
-
-                            <!-- Stage 4 -->
-                            <div class="p-3.5 rounded-2xl bg-slate-100/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
-                                <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                    <span class="w-5 h-5 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-mono text-[10px]">4</span>
-                                    60-Min Closed Loop
-                                </div>
-                                <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-normal">
-                                    Continuous telemetry verification scheduler before automated work order sign-off.
-                                </p>
+                            <div class="p-3 rounded-lg bg-zinc-100/70 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
+                                <div class="font-mono text-zinc-900 dark:text-zinc-200 font-medium">4. Closed Loop</div>
+                                <div class="text-[11px] text-zinc-500 mt-1">60-min continuous verification loop.</div>
                             </div>
                         </div>
 
-                        <!-- Interactive Live Telemetry Simulator Console (Commit 2) -->
-                        <div class="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-4 text-slate-200 font-mono">
-                            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
-                                <div class="flex items-center gap-2 text-xs font-bold text-slate-300">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                    <span>LIVE TELEMETRY SIMULATOR</span>
+                        <!-- Minimal Interactive Telemetry Console -->
+                        <div class="p-4 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 space-y-3 font-mono text-xs">
+                            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 dark:border-zinc-800 pb-2">
+                                <div class="flex items-center gap-2 text-zinc-700 dark:text-zinc-300 font-medium">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                    <span>Telemetry Stream</span>
                                 </div>
-                                <!-- Site Selector Buttons -->
-                                <div class="flex items-center gap-1.5 text-[11px]">
-                                    <button onclick="setGridOpsSite('alpha')" id="btn-site-alpha" class="px-2.5 py-1 rounded-lg bg-brand-600 text-white font-bold transition-all">
-                                        Array Alpha (50MW)
+                                <div class="flex items-center gap-1 text-[11px]">
+                                    <button onclick="setGridOpsSite('alpha')" id="btn-site-alpha" class="px-2.5 py-0.5 rounded bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 font-medium">
+                                        Alpha (50MW)
                                     </button>
-                                    <button onclick="setGridOpsSite('beta')" id="btn-site-beta" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white transition-all">
-                                        Array Beta (20MW)
+                                    <button onclick="setGridOpsSite('beta')" id="btn-site-beta" class="px-2.5 py-0.5 rounded bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">
+                                        Beta (20MW)
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Live Telemetry Metrics Grid -->
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                                    <div class="text-[10px] text-slate-500 uppercase">Current Output</div>
-                                    <div id="sim-power" class="text-base sm:text-lg font-bold text-emerald-400">44.8 MW</div>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
+                                <div class="p-2 rounded bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                                    <div class="text-[10px] text-zinc-500">Output</div>
+                                    <div id="sim-power" class="font-bold text-zinc-900 dark:text-zinc-100">44.8 MW</div>
                                 </div>
-                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                                    <div class="text-[10px] text-slate-500 uppercase">Solar Irradiance</div>
-                                    <div id="sim-irradiance" class="text-base sm:text-lg font-bold text-amber-400">920 W/m²</div>
+                                <div class="p-2 rounded bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                                    <div class="text-[10px] text-zinc-500">Irradiance</div>
+                                    <div id="sim-irradiance" class="font-bold text-zinc-900 dark:text-zinc-100">920 W/m²</div>
                                 </div>
-                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                                    <div class="text-[10px] text-slate-500 uppercase">Battery SOC</div>
-                                    <div id="sim-soc" class="text-base sm:text-lg font-bold text-cyan-400">92%</div>
+                                <div class="p-2 rounded bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                                    <div class="text-[10px] text-zinc-500">SOC</div>
+                                    <div id="sim-soc" class="font-bold text-zinc-900 dark:text-zinc-100">92%</div>
                                 </div>
-                                <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
-                                    <div class="text-[10px] text-slate-500 uppercase">Thermal Derate</div>
-                                    <div id="sim-derate" class="text-base sm:text-lg font-bold text-indigo-400">Nominal</div>
+                                <div class="p-2 rounded bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                                    <div class="text-[10px] text-zinc-500">Derate</div>
+                                    <div id="sim-derate" class="font-bold text-zinc-900 dark:text-zinc-100">Nominal</div>
                                 </div>
                             </div>
 
-                            <!-- Incident Simulation Action -->
-                            <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-900 text-xs">
-                                <div class="flex items-center gap-2 text-slate-400 text-[11px]">
-                                    <i data-lucide="shield-alert" class="w-4 h-4 text-brand-400"></i>
-                                    <span id="sim-status">Status: All inverter strings operating normally</span>
-                                </div>
-                                <button onclick="triggerGridOpsIncident()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-red-500/20 hover:text-red-400 border border-slate-700 text-xs text-slate-300 font-bold transition-all flex items-center gap-1.5">
-                                    <i data-lucide="play" class="w-3.5 h-3.5 text-red-400"></i>
-                                    <span>Simulate Inverter Fault</span>
+                            <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+                                <span id="sim-status" class="text-[11px] text-zinc-500">Status: Nominal</span>
+                                <button onclick="triggerGridOpsIncident()" class="px-2.5 py-1 rounded bg-zinc-200 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 text-[11px] font-medium transition-colors">
+                                    Simulate Fault
                                 </button>
                             </div>
                         </div>
 
-                        <!-- NEW: GridOps Technical Deep-Dive Accordion (Commit 3) -->
-                        <details class="group rounded-2xl bg-slate-100/60 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 p-4 transition-all">
-                            <summary class="flex items-center justify-between cursor-pointer font-bold text-xs text-slate-900 dark:text-white uppercase tracking-wider font-mono select-none">
-                                <span class="flex items-center gap-2 text-brand-600 dark:text-brand-400">
-                                    <i data-lucide="terminal" class="w-4 h-4"></i> Engineering Deep Dive (Design Patterns & Math Formulation)
-                                </span>
-                                <span class="text-slate-400 text-xs group-open:rotate-180 transition-transform">▼</span>
+                        <!-- Technical Details Accordion -->
+                        <details class="group rounded-lg bg-zinc-100/50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800 p-3 text-xs">
+                            <summary class="cursor-pointer font-mono text-zinc-700 dark:text-zinc-300 font-medium select-none flex items-center justify-between">
+                                <span>Architecture Details & Formulation</span>
+                                <span class="text-zinc-500 text-[10px] group-open:rotate-180 transition-transform">▼</span>
                             </summary>
-                            
-                            <div class="pt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-800 mt-3">
-                                <!-- Math & Derating Model -->
-                                <div class="space-y-1.5">
-                                    <h6 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                        <i data-lucide="calculator" class="w-3.5 h-3.5 text-amber-400"></i> Physics Derating Model
-                                    </h6>
-                                    <div class="p-2.5 rounded-xl bg-slate-950 font-mono text-[11px] text-cyan-300 border border-slate-800">
-                                        P_exp = η · A · G · [1 - γ(T_cell - 25)]
-                                    </div>
-                                    <p class="text-[11px] leading-relaxed text-slate-500">
-                                        Computes expected power output based on real-time solar irradiance (G) and panel temperature (T_cell), eliminating 80% false alarms.
-                                    </p>
+                            <div class="pt-3 grid grid-cols-1 md:grid-cols-3 gap-3 text-zinc-600 dark:text-zinc-400 mt-2 border-t border-zinc-200 dark:border-zinc-800 text-[11px]">
+                                <div>
+                                    <div class="font-mono text-zinc-900 dark:text-zinc-200 font-medium">Physics Model</div>
+                                    <div class="font-mono text-[10px] p-1.5 rounded bg-zinc-200 dark:bg-zinc-950 mt-1">P_exp = η · A · G · [1 - γ(T_cell - 25)]</div>
                                 </div>
-
-                                <!-- Design Patterns -->
-                                <div class="space-y-1.5">
-                                    <h6 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                        <i data-lucide="layers" class="w-3.5 h-3.5 text-indigo-400"></i> Design Patterns
-                                    </h6>
-                                    <ul class="space-y-1 text-[11px] list-disc list-inside text-slate-500">
-                                        <li><strong class="text-slate-300">Factory Pattern:</strong> Decoupled telemetry decoders for multi-vendor inverters.</li>
-                                        <li><strong class="text-slate-300">Strategy Pattern:</strong> Dynamic baseline algorithms across varying cloud coverage.</li>
-                                        <li><strong class="text-slate-300">Observer Pattern:</strong> STOMP WebSocket alert broadcasting.</li>
-                                    </ul>
+                                <div>
+                                    <div class="font-mono text-zinc-900 dark:text-zinc-200 font-medium">Design Patterns</div>
+                                    <div class="mt-1">Factory (telemetry decoders), Strategy (baselines), Observer (STOMP).</div>
                                 </div>
-
-                                <!-- Database & Indexing -->
-                                <div class="space-y-1.5">
-                                    <h6 class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                        <i data-lucide="database" class="w-3.5 h-3.5 text-emerald-400"></i> Database & Optimization
-                                    </h6>
-                                    <p class="text-[11px] leading-relaxed text-slate-500">
-                                        PostgreSQL with <strong class="text-slate-300">Flyway migrations</strong> and compound B-tree index on <code class="text-brand-400 font-mono text-[10px]">(asset_id, recorded_at DESC)</code> yielding sub-10ms query times on timeseries partitions.
-                                    </p>
+                                <div>
+                                    <div class="font-mono text-zinc-900 dark:text-zinc-200 font-medium">Database Indexing</div>
+                                    <div class="mt-1">Compound B-tree on <code class="font-mono text-zinc-800 dark:text-zinc-200">(asset_id, recorded_at DESC)</code>.</div>
                                 </div>
                             </div>
                         </details>
@@ -750,156 +553,82 @@
                 </div>
 
                 <!-- PROJECT 2: IntelliDoc AI -->
-                <div class="project-card p-7 sm:p-9 rounded-3xl glass-card space-y-6">
-                    
-                    <!-- Preview Banner -->
-                    <div class="project-preview-banner h-44 bg-gradient-to-br from-slate-900 via-cyan-950 to-slate-900 border border-slate-700/60 p-6 flex flex-col justify-between relative">
-                        <div class="flex items-center justify-between z-10">
-                            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-mono">
-                                <i data-lucide="bot" class="w-3.5 h-3.5"></i> Semantic RAG Pipeline
-                            </div>
-                            <span class="text-xs font-mono text-slate-400">LangChain & ChromaDB</span>
-                        </div>
-                        <div class="mockup-view flex items-center justify-center gap-3 py-2 text-xs font-mono text-cyan-300/80">
-                            <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700">Document Chunking</span>
-                            <span>➔</span>
-                            <span class="px-3 py-1.5 rounded-lg bg-cyan-900/60 border border-cyan-500/40 text-cyan-200">Vector Embeddings</span>
-                            <span>➔</span>
-                            <span class="px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700">Zero-Hallucination Query</span>
-                        </div>
-                        <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 z-10 pt-2 border-t border-slate-800">
-                            <span>Context-Window Optimization</span>
-                            <span class="text-cyan-400 font-bold">Enterprise Knowledge Base</span>
-                        </div>
-                    </div>
-
+                <div class="p-6 sm:p-7 rounded-2xl minimal-card space-y-4">
                     <div class="flex flex-wrap items-start justify-between gap-4">
-                        <div class="space-y-2">
-                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-bold font-mono border border-cyan-500/20">
-                                <i data-lucide="bot" class="w-3.5 h-3.5 text-cyan-400"></i> GenAI & Vector Databases
-                            </div>
-                            <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                        <div class="space-y-1">
+                            <div class="text-[11px] font-mono text-zinc-500">Generative AI / RAG</div>
+                            <h3 class="text-lg sm:text-xl font-bold text-zinc-900 dark:text-zinc-100">
                                 IntelliDoc AI: RAG-Driven Enterprise Knowledge Base
-                            </h4>
+                            </h3>
                         </div>
-                        <div class="flex flex-wrap items-center gap-3">
-                            <a href="https://github.com" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-brand-500 hover:border-brand-500/50 border border-slate-300 dark:border-slate-700 transition-all text-xs font-bold shadow-sm">
-                                <i data-lucide="github" class="w-4 h-4"></i> GitHub Code
-                            </a>
-                            <a href="https://github.com" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white shadow-md shadow-cyan-500/25 transition-all text-xs font-bold transform hover:-translate-y-0.5">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live App Demo
+                        <div class="flex items-center gap-2">
+                            <a href="https://github.com/yakshpatidar88-cyber" target="_blank" rel="noopener" class="btn-secondary !py-1.5 !px-3 !text-xs">
+                                <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
                             </a>
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap gap-2 text-xs">
-                        <span class="px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono font-medium border border-emerald-200 dark:border-emerald-800/80">Python</span>
-                        <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-mono font-medium border border-indigo-200 dark:border-indigo-800/80">LangChain</span>
-                        <span class="px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono font-medium border border-emerald-200 dark:border-emerald-800/80">FastAPI</span>
-                        <span class="px-3 py-1 rounded-lg bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-mono font-medium border border-purple-200 dark:border-purple-800/80">ChromaDB</span>
-                        <span class="px-3 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 font-mono font-medium border border-amber-200 dark:border-amber-800/80">OpenAI API</span>
-                        <span class="px-3 py-1 rounded-lg bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 font-mono font-medium border border-cyan-200 dark:border-cyan-800/80">React.js</span>
+                    <div class="flex flex-wrap gap-1.5 text-xs font-mono">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">ChromaDB</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">React.js</span>
                     </div>
 
-                    <ul class="space-y-3.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed list-disc list-inside">
-                        <li>
-                            <strong class="text-slate-900 dark:text-white">RAG Architecture:</strong> Architected a Retrieval-Augmented Generation (RAG) pipeline to parse, chunk, and semantically query large-scale corporate document repositories.
-                        </li>
-                        <li>
-                            <strong class="text-slate-900 dark:text-white">Vector DB Optimization:</strong> Integrated ChromaDB vector database with optimized chunk overlapping strategies to maximize context-window accuracy and eliminate LLM hallucinations.
-                        </li>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
+                        <li><strong class="text-zinc-900 dark:text-zinc-200 font-medium">RAG Pipeline:</strong> Parses, chunks, and semantically queries enterprise document repositories.</li>
+                        <li><strong class="text-zinc-900 dark:text-zinc-200 font-medium">Vector Optimization:</strong> ChromaDB vector store with chunk overlapping strategies to maximize context accuracy.</li>
                     </ul>
                 </div>
 
-                <!-- PROJECT 3 & 4 Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- PROJECTS 3 & 4 Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Project 3 -->
-                    <div class="project-card p-7 sm:p-8 rounded-3xl glass-card space-y-5 flex flex-col justify-between">
-                        <div class="space-y-4">
-                            <!-- Preview Banner -->
-                            <div class="project-preview-banner h-32 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 border border-slate-700/60 p-4 flex flex-col justify-between">
-                                <div class="flex items-center justify-between text-xs font-mono text-purple-300">
-                                    <span>Microservice Engine</span>
-                                    <span class="text-emerald-400">Redis Caching</span>
-                                </div>
-                                <div class="mockup-view flex items-center justify-around text-[10px] font-mono text-slate-400">
-                                    <span class="p-1.5 rounded bg-slate-800 border border-slate-700">Auth Service</span>
-                                    <span class="p-1.5 rounded bg-slate-800 border border-slate-700">Inventory</span>
-                                    <span class="p-1.5 rounded bg-slate-800 border border-slate-700">Orders</span>
-                                </div>
+                    <div class="p-6 rounded-2xl minimal-card space-y-3 flex flex-col justify-between">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[11px] font-mono text-zinc-500">Backend / Microservices</span>
+                                <a href="https://github.com/yakshpatidar88-cyber" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-100">
+                                    <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                </a>
                             </div>
-
-                            <div class="flex items-start justify-between gap-2">
-                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 text-xs font-bold font-mono border border-purple-500/20">
-                                    <i data-lucide="server" class="w-3.5 h-3.5"></i> Microservices
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <a href="https://github.com" target="_blank" rel="noopener" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors" title="GitHub Code">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                    </a>
-                                    <a href="https://github.com" target="_blank" rel="noopener" class="p-1.5 rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-400 hover:bg-brand-500/20 transition-colors" title="Swagger API Demo">
-                                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">
+                            <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">
                                 Scalable E-Commerce Microservices Engine
-                            </h4>
-                            <div class="flex flex-wrap gap-1.5 text-xs">
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Node.js</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Express.js</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">PostgreSQL</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Redis</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Docker</span>
+                            </h3>
+                            <div class="flex flex-wrap gap-1 text-[11px] font-mono">
+                                <span class="skill-tag !py-0.5">Node.js</span>
+                                <span class="skill-tag !py-0.5">Express</span>
+                                <span class="skill-tag !py-0.5">PostgreSQL</span>
+                                <span class="skill-tag !py-0.5">Redis</span>
                             </div>
-                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Engineered a modular, high-throughput backend infrastructure utilizing decoupled microservices for inventory, authentication, and ordering pipelines. Implemented a Redis caching layer for high-traffic data endpoints, accelerating API response times and mitigating primary database bottlenecks.
+                            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                Decoupled microservices for inventory, authentication, and ordering pipelines with Redis caching layer mitigating database bottlenecks.
                             </p>
                         </div>
                     </div>
 
                     <!-- Project 4 -->
-                    <div class="project-card p-7 sm:p-8 rounded-3xl glass-card space-y-5 flex flex-col justify-between">
-                        <div class="space-y-4">
-                            <!-- Preview Banner -->
-                            <div class="project-preview-banner h-32 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 border border-slate-700/60 p-4 flex flex-col justify-between">
-                                <div class="flex items-center justify-between text-xs font-mono text-emerald-300">
-                                    <span>Asset Portfolio Visualizer</span>
-                                    <span class="text-emerald-400">Spring Boot & SQL</span>
-                                </div>
-                                <div class="mockup-view flex items-end justify-between gap-1.5 h-12 px-2">
-                                    <div class="w-full bg-emerald-500/40 rounded-t h-40%"></div>
-                                    <div class="w-full bg-cyan-500/40 rounded-t h-70%"></div>
-                                    <div class="w-full bg-brand-500/40 rounded-t h-90%"></div>
-                                    <div class="w-full bg-indigo-500/40 rounded-t h-60%"></div>
-                                </div>
+                    <div class="p-6 rounded-2xl minimal-card space-y-3 flex flex-col justify-between">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[11px] font-mono text-zinc-500">FinTech / Full-Stack</span>
+                                <a href="https://github.com/yakshpatidar88-cyber" target="_blank" rel="noopener" class="text-zinc-400 hover:text-zinc-100">
+                                    <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                                </a>
                             </div>
-
-                            <div class="flex items-start justify-between gap-2">
-                                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono border border-emerald-500/20">
-                                    <i data-lucide="line-chart" class="w-3.5 h-3.5"></i> Full-Stack FinTech
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <a href="https://github.com" target="_blank" rel="noopener" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-brand-500 transition-colors" title="GitHub Code">
-                                        <i data-lucide="github" class="w-4 h-4"></i>
-                                    </a>
-                                    <a href="https://github.com" target="_blank" rel="noopener" class="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors" title="Live Application">
-                                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white">
+                            <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">
                                 Automated Multi-Asset Portfolio Tracker
-                            </h4>
-                            <div class="flex flex-wrap gap-1.5 text-xs">
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Java</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Spring Boot</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Hibernate</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">MySQL</span>
-                                <span class="px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[11px]">Chart.js</span>
+                            </h3>
+                            <div class="flex flex-wrap gap-1 text-[11px] font-mono">
+                                <span class="skill-tag !py-0.5">Java</span>
+                                <span class="skill-tag !py-0.5">Spring Boot</span>
+                                <span class="skill-tag !py-0.5">MySQL</span>
+                                <span class="skill-tag !py-0.5">Chart.js</span>
                             </div>
-                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Developed a secure full-stack web application designed to track, aggregate, and visualize user asset allocations across equity and hybrid financial instruments. Optimized relational database queries and index tables to execute multi-table data joins without performance degradation.
+                            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                Tracks and visualizes user asset allocations across equity and hybrid financial instruments with optimized SQL join execution.
                             </p>
                         </div>
                     </div>
@@ -908,234 +637,176 @@
             </div>
         </section>
 
-        <!-- ================= WORK EXPERIENCE ================= -->
-        <section id="experience" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="text-center md:text-left space-y-2">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">04. Professional Journey</h2>
-                <h3 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Experience & Internships</h3>
+        <!-- ================= EXPERIENCE ================= -->
+        <section id="experience" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">05 / Professional Journey</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Experience</h2>
             </div>
 
-            <div class="relative pl-6 sm:pl-8 border-l-2 border-slate-200 dark:border-slate-800 space-y-8">
-                <!-- Exp 1: Technotask -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-dark-bg border-4 border-brand-500 group-hover:scale-125 transition-transform"></div>
-                    <div class="p-6 sm:p-7 rounded-2xl glass-card space-y-3">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">IT Support & Assistance Intern</h4>
-                                <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Technotask • Bhopal, India</p>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 font-mono border border-brand-500/20">Jan 2026 – Mar 2026</span>
+            <div class="space-y-4">
+                <!-- Technotask -->
+                <div class="p-5 sm:p-6 rounded-xl minimal-card space-y-2">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div>
+                            <h3 class="font-semibold text-sm sm:text-base text-zinc-900 dark:text-zinc-100">IT Support & Assistance Intern</h3>
+                            <p class="text-xs text-zinc-500 font-mono">Technotask • Bhopal, India</p>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
-                            <li><strong class="text-slate-900 dark:text-white">Infrastructure Maintenance:</strong> Maintained internal IT infrastructure, network configurations, and MySQL database servers, ensuring uninterrupted operations for 100+ business workstations.</li>
-                            <li><strong class="text-slate-900 dark:text-white">Automated Health Monitoring:</strong> Diagnosed system bottlenecks and automated routine server health checks using custom Python scripts, reducing recurring infrastructure downtime.</li>
-                        </ul>
+                        <span class="text-xs font-mono text-zinc-500">Jan 2026 – Mar 2026</span>
                     </div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
+                        <li>Maintained internal IT infrastructure, network configurations, and MySQL database servers for 100+ business workstations.</li>
+                        <li>Automated routine server health checks using custom Python scripts, reducing recurring infrastructure downtime.</li>
+                    </ul>
                 </div>
 
-                <!-- Exp 2: Forage Lyft -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-dark-bg border-4 border-slate-400 dark:border-slate-600 group-hover:scale-125 transition-transform"></div>
-                    <div class="p-6 sm:p-7 rounded-2xl glass-card space-y-3">
-                        <div class="flex flex-wrap items-center justify-between gap-2">
-                            <div>
-                                <h4 class="text-lg font-bold text-slate-900 dark:text-white">Software Engineering Virtual Intern – Lyft Simulation Track</h4>
-                                <p class="text-sm font-semibold text-brand-600 dark:text-brand-400">Forage • Remote</p>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono border border-slate-200 dark:border-slate-700">Nov 2025</span>
+                <!-- Forage Lyft -->
+                <div class="p-5 sm:p-6 rounded-xl minimal-card space-y-2">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div>
+                            <h3 class="font-semibold text-sm sm:text-base text-zinc-900 dark:text-zinc-100">Software Engineering Virtual Intern</h3>
+                            <p class="text-xs text-zinc-500 font-mono">Forage (Lyft Simulation Track) • Remote</p>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300 list-disc list-inside">
-                            <li><strong class="text-slate-900 dark:text-white">OOP Architecture Refactor:</strong> Refactored legacy car component-tracking architecture by implementing clean Object-Oriented Programming (OOP) design patterns in Python.</li>
-                            <li><strong class="text-slate-900 dark:text-white">Unit Testing:</strong> Wrote comprehensive unit test suites using pytest to validate complex component lifecycle logic, achieving over 90% code coverage.</li>
-                        </ul>
+                        <span class="text-xs font-mono text-zinc-500">Nov 2025</span>
                     </div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
+                        <li>Refactored legacy car component-tracking architecture using clean Object-Oriented design patterns in Python.</li>
+                        <li>Wrote comprehensive unit test suites using pytest validating component lifecycle logic, achieving over 90% code coverage.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- ================= CERTIFICATIONS WITH VERIFICATION BUTTONS ================= -->
-        <section id="certifications" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="text-center md:text-left space-y-2">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">05. Credentials</h2>
-                <h3 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Certifications & Achievements</h3>
+        <!-- ================= CERTIFICATIONS ================= -->
+        <section id="certifications" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">06 / Credentials</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Certifications</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Cert 1: NPTEL -->
-                <div class="p-6 sm:p-7 rounded-2xl glass-card space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-start justify-between gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">
-                                <i data-lucide="award" class="w-5 h-5"></i>
-                            </div>
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 font-mono border border-amber-500/20">Elite Certification</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- NPTEL -->
+                <div class="p-5 rounded-xl minimal-card space-y-2 flex flex-col justify-between">
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100">NPTEL Elite</span>
+                            <span class="text-[10px] font-mono text-zinc-500">Java</span>
                         </div>
-                        <h4 class="text-base font-bold text-slate-900 dark:text-white">
-                            NPTEL National Certification – Programming in Java
-                        </h4>
-                        <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">NPTEL / Ministry of Education</p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                            Earned elite certification ranking, validating advanced structural mastery of object-oriented programming paradigms and Java fundamentals.
-                        </p>
+                        <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-200">Programming in Java</h3>
+                        <p class="text-xs text-zinc-500">Advanced structural mastery of object-oriented programming paradigms.</p>
                     </div>
-                    <div class="pt-2">
-                        <a href="https://nptel.ac.in" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-500">
-                            <span>Verify Credential</span>
-                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://nptel.ac.in" target="_blank" rel="noopener" class="text-xs font-mono text-zinc-400 hover:text-zinc-100 inline-flex items-center gap-1 pt-1">
+                        <span>Verify</span> <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
                 </div>
 
-                <!-- Cert 2: Alpha Full-Stack -->
-                <div class="p-6 sm:p-7 rounded-2xl glass-card space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-start justify-between gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-bold">
-                                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
-                            </div>
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 font-mono border border-brand-500/20">Full Stack</span>
+                <!-- Alpha Full-Stack -->
+                <div class="p-5 rounded-xl minimal-card space-y-2 flex flex-col justify-between">
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100">Apna College</span>
+                            <span class="text-[10px] font-mono text-zinc-500">Full Stack</span>
                         </div>
-                        <h4 class="text-base font-bold text-slate-900 dark:text-white">
-                            Alpha Full-Stack Development Track
-                        </h4>
-                        <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">Apna College</p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                            Completed rigorous full-stack engineering curriculum, building and deploying multiple production-ready web applications.
-                        </p>
+                        <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-200">Alpha Full-Stack Track</h3>
+                        <p class="text-xs text-zinc-500">Full-stack curriculum building and deploying production web applications.</p>
                     </div>
-                    <div class="pt-2">
-                        <a href="https://apnacollege.in" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-500">
-                            <span>View Certificate</span>
-                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://apnacollege.in" target="_blank" rel="noopener" class="text-xs font-mono text-zinc-400 hover:text-zinc-100 inline-flex items-center gap-1 pt-1">
+                        <span>Verify</span> <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
                 </div>
 
-                <!-- Cert 3: Prompt Engineering -->
-                <div class="p-6 sm:p-7 rounded-2xl glass-card space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-start justify-between gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-bold">
-                                <i data-lucide="sparkles" class="w-5 h-5"></i>
-                            </div>
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-mono border border-cyan-500/20">Generative AI</span>
+                <!-- Prompt Engineering -->
+                <div class="p-5 rounded-xl minimal-card space-y-2 flex flex-col justify-between">
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100">LinkedIn Learning</span>
+                            <span class="text-[10px] font-mono text-zinc-500">AI</span>
                         </div>
-                        <h4 class="text-base font-bold text-slate-900 dark:text-white">
-                            Prompt Engineering for Generative AI
-                        </h4>
-                        <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">LinkedIn Learning</p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                            Applied context-window strategies, few-shot prompting, and semantic context alignment directly to vector database architectures.
-                        </p>
+                        <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-200">Prompt Engineering for GenAI</h3>
+                        <p class="text-xs text-zinc-500">Context-window strategies and vector database architectures.</p>
                     </div>
-                    <div class="pt-2">
-                        <a href="https://linkedin.com/learning" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-500">
-                            <span>Verify Credential</span>
-                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://linkedin.com/learning" target="_blank" rel="noopener" class="text-xs font-mono text-zinc-400 hover:text-zinc-100 inline-flex items-center gap-1 pt-1">
+                        <span>Verify</span> <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
                 </div>
 
-                <!-- Cert 4: Python -->
-                <div class="p-6 sm:p-7 rounded-2xl glass-card space-y-4 flex flex-col justify-between">
-                    <div class="space-y-3">
-                        <div class="flex items-start justify-between gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold">
-                                <i data-lucide="terminal" class="w-5 h-5"></i>
-                            </div>
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono border border-emerald-500/20">Problem Solving</span>
+                <!-- Python -->
+                <div class="p-5 rounded-xl minimal-card space-y-2 flex flex-col justify-between">
+                    <div class="space-y-1.5">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100">LinkedIn Learning</span>
+                            <span class="text-[10px] font-mono text-zinc-500">Python</span>
                         </div>
-                        <h4 class="text-base font-bold text-slate-900 dark:text-white">
-                            Skill Up with Python
-                        </h4>
-                        <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">LinkedIn Learning</p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                            Specialized in algorithmic problem solving, clean code architecture, data processing, and scripting.
-                        </p>
+                        <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-200">Skill Up with Python</h3>
+                        <p class="text-xs text-zinc-500">Algorithmic problem solving and data processing.</p>
                     </div>
-                    <div class="pt-2">
-                        <a href="https://linkedin.com/learning" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-500">
-                            <span>Verify Credential</span>
-                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                        </a>
-                    </div>
+                    <a href="https://linkedin.com/learning" target="_blank" rel="noopener" class="text-xs font-mono text-zinc-400 hover:text-zinc-100 inline-flex items-center gap-1 pt-1">
+                        <span>Verify</span> <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- ================= EDUCATION ================= -->
-        <section id="education" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="text-center md:text-left space-y-2">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">06. Academics</h2>
-                <h3 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Education</h3>
+        <section id="education" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">07 / Education</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Academics</h2>
             </div>
 
-            <div class="p-7 sm:p-8 rounded-3xl glass-card space-y-4">
+            <div class="p-5 sm:p-6 rounded-xl minimal-card space-y-3">
                 <div class="flex flex-wrap items-center justify-between gap-2">
                     <div>
-                        <h4 class="text-xl font-bold text-slate-900 dark:text-white">Bachelor of Technology (B.Tech) - Computer Science and Engineering</h4>
-                        <p class="text-base font-semibold text-brand-600 dark:text-brand-400 mt-1">Oriental Institute of Science and Technology, Bhopal</p>
+                        <h3 class="font-semibold text-sm sm:text-base text-zinc-900 dark:text-zinc-100">
+                            Bachelor of Technology (B.Tech) in Computer Science & Engineering
+                        </h3>
+                        <p class="text-xs text-zinc-500 font-mono">Oriental Institute of Science and Technology, Bhopal</p>
                     </div>
-                    <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-500/10 text-brand-600 dark:text-brand-400 font-mono border border-brand-500/20">July 2023 – June 2027</span>
+                    <span class="text-xs font-mono text-zinc-500">July 2023 – June 2027</span>
                 </div>
-                <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
-                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                        <strong class="text-slate-900 dark:text-white">Core Coursework:</strong> Operating Systems, Data Structures, Analysis of Algorithms, Artificial Intelligence, Machine Learning, Computer Networks, Database Management Systems.
-                    </p>
-                </div>
+                <p class="text-xs text-zinc-600 dark:text-zinc-400 pt-2 border-t border-zinc-200 dark:border-zinc-800">
+                    <strong class="text-zinc-900 dark:text-zinc-200 font-medium">Core Courses:</strong> Operating Systems, Data Structures, Analysis of Algorithms, Artificial Intelligence, Machine Learning, Computer Networks, Database Management Systems.
+                </p>
             </div>
         </section>
 
-        <!-- ================= CONTACT SECTION ================= -->
-        <section id="contact" class="space-y-8 scroll-mt-24 reveal-on-scroll">
-            <div class="text-center space-y-3 max-w-2xl mx-auto">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400 font-mono">07. Get In Touch</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">Let's Connect for Placements</h3>
-                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-                    I am actively seeking Software Development Engineer (SDE) and Full-Stack opportunities. Feel free to reach out via email or phone directly!
-                </p>
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="space-y-6 scroll-mt-24 reveal-on-scroll">
+            <div class="space-y-1 text-center max-w-lg mx-auto">
+                <span class="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest">08 / Contact</span>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Get In Touch</h2>
+                <p class="text-xs text-zinc-500">Available for software engineering opportunities.</p>
             </div>
 
-            <div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-4">
-                <!-- Email Card -->
-                <div class="p-6 rounded-2xl glass-card space-y-4 flex flex-col justify-between">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500">Email Address</div>
-                            <div class="text-sm font-bold text-slate-900 dark:text-white truncate">yakshpatidar88@gmail.com</div>
-                        </div>
+            <div class="max-w-2xl mx-auto grid sm:grid-cols-2 gap-3">
+                <!-- Email -->
+                <div class="p-4 rounded-xl minimal-card space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="text-[11px] font-mono text-zinc-500">Email</div>
+                        <div class="text-xs font-semibold text-zinc-900 dark:text-zinc-100 truncate">yakshpatidar88@gmail.com</div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2">
-                        <a href="mailto:yakshpatidar88@gmail.com" class="flex-1 py-2 text-center text-xs font-bold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 rounded-xl transition-all shadow-md shadow-brand-500/20">
+                    <div class="flex items-center gap-2">
+                        <a href="mailto:yakshpatidar88@gmail.com" class="flex-1 btn-primary !py-1.5 !text-xs">
                             Send Email
                         </a>
-                        <button onclick="copyToClipboard('yakshpatidar88@gmail.com', 'Email copied!')" class="px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors">
-                            <i data-lucide="copy" class="w-4 h-4"></i>
+                        <button onclick="copyToClipboard('yakshpatidar88@gmail.com', 'Email copied!')" class="p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Phone Card -->
-                <div class="p-6 rounded-2xl glass-card space-y-4 flex flex-col justify-between">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
-                            <i data-lucide="phone" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-500">Phone / Mobile</div>
-                            <div class="text-sm font-bold text-slate-900 dark:text-white">+91-9691428855</div>
-                        </div>
+                <!-- Phone -->
+                <div class="p-4 rounded-xl minimal-card space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="text-[11px] font-mono text-zinc-500">Phone</div>
+                        <div class="text-xs font-semibold text-zinc-900 dark:text-zinc-100">+91-9691428855</div>
                     </div>
-                    <div class="flex items-center gap-2 pt-2">
-                        <a href="tel:+919691428855" class="flex-1 py-2 text-center text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-700 rounded-xl transition-all shadow-md shadow-emerald-500/20">
+                    <div class="flex items-center gap-2">
+                        <a href="tel:+919691428855" class="flex-1 btn-secondary !py-1.5 !text-xs">
                             Call Direct
                         </a>
-                        <button onclick="copyToClipboard('+919691428855', 'Phone copied!')" class="px-3 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors">
-                            <i data-lucide="copy" class="w-4 h-4"></i>
+                        <button onclick="copyToClipboard('+919691428855', 'Phone copied!')" class="p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                         </button>
                     </div>
                 </div>
@@ -1145,14 +816,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-                © <span id="year"></span> <strong class="text-slate-700 dark:text-slate-300">Yaksh Patidar</strong>. Built for campus placements.
-            </div>
-            <div class="flex items-center gap-4 text-xs">
-                <a href="#hero" class="hover:text-brand-500 transition-colors">Back to top ↑</a>
-            </div>
+    <footer class="border-t border-zinc-200 dark:border-zinc-800 py-6 text-center text-xs text-zinc-500 font-mono">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div>© <span id="year"></span> Yaksh Patidar</div>
+            <a href="#hero" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Back to top ↑</a>
         </div>
     </footer>
 
