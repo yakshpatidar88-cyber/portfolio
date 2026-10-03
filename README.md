@@ -39,7 +39,7 @@
 - **NPTEL National Certification**: Programming in Java (*Elite Certification*)
 - **Alpha Full-Stack Development Track**: Apna College
 - **Prompt Engineering for Generative AI**: LinkedIn Learning
-- **Skill Up with Python**: LinkedIn Learning
+- **Skill Up with Python**: LinkedIn Learning ..
 
 ---
 
