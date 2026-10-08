@@ -1,0 +1,16 @@
+# Compiled binaries and build outputs
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE and Editor artifacts
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
