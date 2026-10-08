@@ -8,7 +8,7 @@
 - [x] **Commit 1.1** `build: initialize maven coordinates and core dependency BOM`
 - [x] **Commit 1.2** `ci(docker): configure multi-container postgres 16, redis 7, and kafka cluster`
 - [x] **Commit 1.3** `docs(arch): add architecture decisions log and living roadmap`
-- [ ] **Commit 1.4** `feat(domain): draft formal ledger specifications and entity models`
+- [X] **Commit 1.4** `feat(domain): draft formal ledger specifications and entity models`
 
 ---
 
