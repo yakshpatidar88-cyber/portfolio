@@ -16,7 +16,7 @@
 - [X] **Commit 2.1** `feat(db): create flyway migration for accounts and transactions`
 - [X] **Commit 2.2** `feat(db): add ledger_entries schema with composite timeseries indexes`
 - [X] **Commit 2.3** `feat(db): enforce database-level immutability (revoke update/delete)`
-- [ ] **Commit 2.4** `test(db): verify flyway migration execution and zero-update constraints`
+- [X] **Commit 2.4** `test(db): verify flyway migration execution and zero-update constraints`
 
 ---
 
