@@ -21,7 +21,7 @@
 ---
 
 ## Day 3: JPA Domain Entities & Double-Entry Invariants
-- [ ] **Commit 3.1** `feat(entity): implement Account and Transaction JPA entities`
+- [X] **Commit 3.1** `feat(entity): implement Account and Transaction JPA entities`
 - [ ] **Commit 3.2** `feat(entity): implement immutable LedgerEntry with zero-drift constraint`
 - [ ] **Commit 3.3** `test(unit): build double-entry invariant validator (sum debits == credits)`
 
