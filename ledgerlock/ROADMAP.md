@@ -21,10 +21,10 @@
 ---
 
 ## Day 3: JPA Domain Entities & Double-Entry Invariants
-- [X] **Commit 3.1** `feat(entity): implement Account and Transaction JPA entities`
-- [X] **Commit 3.2** `feat(entity): implement immutable LedgerEntry with zero-drift constraint`
-- [X] **Commit 3.3** `test(unit): build double-entry invariant validator (sum debits == credits)`
-
+- [x] **Commit 3.1** `feat(entity): implement Account and Transaction JPA entities`
+- [x] **Commit 3.2** `feat(entity): implement immutable LedgerEntry with zero-drift constraint`
+- [x] **Commit 3.3** `feat(entity): implement IdempotencyRecord entity for replay protection`
+- [x] **Commit 3.4** `test(unit): build double-entry invariant validator (sum debits == credits)`
 ---
 
 ## Day 4: Spring Data JPA & Query Optimizations
