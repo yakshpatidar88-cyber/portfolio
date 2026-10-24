@@ -28,9 +28,10 @@
 ---
 
 ## Day 4: Spring Data JPA & Query Optimizations
-- [X] **Commit 4.1** `feat(repo): create account repository with pessimistic write locks`
-- [X] **Commit 4.2** `feat(repo): create ledger entry repository with balance summation`
-- [X] **Commit 4.3** `feat(dto): create transfer request/response DTOs with RFC-7807 problem details`
+- [x] **Commit 4.1** `feat(repo): create account repository with pessimistic write locks`
+- [x] **Commit 4.2** `feat(repo): create ledger entry repository with balance summation`
+- [X] **Commit 4.3** `feat(repo): create transaction and idempotency repositories`
+- [X] **Commit 4.4** `feat(dto): create transfer request/response DTOs with RFC-7807 problem details`
 
 ---
 
