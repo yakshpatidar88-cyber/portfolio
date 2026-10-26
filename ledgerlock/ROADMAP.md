@@ -36,7 +36,7 @@
 ---
 
 ## Day 5: Deadlock-Free Concurrency Lock Manager
-- [ ] **Commit 5.1** `feat(concurrency): implement deterministic account ordering lock algorithm`
+- [X] **Commit 5.1** `feat(concurrency): implement deterministic account ordering lock algorithm`
 - [ ] **Commit 5.2** `feat(concurrency): configure redisson distributed lock manager`
 - [ ] **Commit 5.3** `test(concurrency): verify deterministic ordering breaks coffman circular wait`
 
